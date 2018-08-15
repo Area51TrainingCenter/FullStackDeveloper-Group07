@@ -1,0 +1,20 @@
+<button [disabled]="activo">Grabar</button>
+
+<button (click)="activo=!activo">Activar</button>
+
+<!--<input type="text" (input)="valorIngresado($event)">-->
+
+<input type="text" [(ngModel)]="textoIngresado">
+
+<br> {{textoIngresado}}
+<br>
+<button (click)="agregarAlumno()">Agregar alumno</button>
+
+<!--<button (click)="activar()">Activar</button> -->
+
+<table>
+  <caption>Cantidad de alumnos = {{alumnos.length}}</caption>
+  <tr *ngFor="let alumno of alumnos">
+    <td>{{alumno}}</td>
+  </tr>
+</table>

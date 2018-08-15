@@ -1,0 +1,34 @@
+<div class="row">
+  <form class="col-6">
+
+    <div class="form-group">
+      <input type="text" placeholder="Ingrese el título" class="form-control" [(ngModel)]="titulo" name="titulo">
+    </div>
+
+    <div class="form-group">
+      <textarea placeholder="Ingrese la descripción" cols="30" rows="10" class="form-control" [(ngModel)]="descripcion" name="descripcion"></textarea>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Ingrese la url de la imagen" [(ngModel)]="url" name="url">
+    </div>
+
+    <div class="form-group">
+      <button type="button" class="btn btn-success" (click)="grabar()">Grabar</button>
+    </div>
+
+  </form>
+
+  <table class="table table-hover table-striped col-6">
+    <thead>
+      <tr>
+        <th>Receta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let receta of recetas">
+        <td>{{receta.titulo}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

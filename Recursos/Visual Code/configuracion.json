@@ -1,0 +1,20 @@
+// Coloque su configuración en este archivo para sobrescribir la configuración predeterminada.
+{
+	"workbench.colorTheme": "Cobalt2",
+	"workbench.activityBar.visible": true,
+	"window.zoomLevel": 0,
+	"editor.fontFamily": "Fira Code, 'Segoe UI Emoji'",
+	"editor.fontLigatures": true,
+	"editor.tabSize": 4,
+	"editor.fontSize": 22,
+	"editor.wordWrap": "on",
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": true
+	},
+	"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+	"files.autoSave": "onFocusChange",
+	"terminal.integrated.fontSize": 20
+}
