@@ -1,0 +1,34 @@
+<article>
+	Javier Salinas
+	<br>
+	<button (click)="mostrarDatos = !mostrarDatos">Mostrar más información del usuario</button>
+	<p *ngIf="mostrarDatos">
+		Correo: javier.salinas@gmail.com
+		<br> Teléfono: 999-145-678
+		<br> Dirección: Av. Javier Prado Oeste 4534. Magdalena
+	</p>
+</article>
+
+<input type="text" [(ngModel)]="nombreAlumno">
+<br>
+<input type="number" [(ngModel)]="edadAlumno">
+<br>
+<button 
+	(click)="agregarAlumno()" 
+	[ngStyle]="{backgroundColor: colorAleatorio(), color: 'white', border: '0px', padding: '8px 24px'}"
+ 	[ngClass]="{letraInclinada: decisionAleatoria()}">Agregar alumno</button>
+
+<div *ngIf="alumnos.length; else noHay">
+	<section 
+		*ngFor="let alumno of alumnos; let indice = index" 
+		[ngStyle]="{backgroundColor: obtenerColor(indice)}"
+		[ngClass]="{letraInclinada: parOImpar(indice), conSombra: conOSinSombra(indice)}"
+		>
+		{{indice + 1}}. {{alumno.nombre}}
+	</section>
+</div>
+<ng-template #noHay>
+	<div>
+		No hay alumnos
+	</div>
+</ng-template>
