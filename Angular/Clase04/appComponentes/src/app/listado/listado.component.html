@@ -1,0 +1,14 @@
+<table class="table table-hover table-striped col-6">
+	<thead>
+		<tr>
+			<th>Área</th>
+			<th>Servidor</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let servidor of servidores">
+			<td>{{servidor.area}}</td>
+			<td>{{servidor.nombre}}</td>
+		</tr>
+	</tbody>
+</table>
