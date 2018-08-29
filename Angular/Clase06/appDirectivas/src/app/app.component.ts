@@ -24,7 +24,7 @@ export class AppComponent {
 
 				const lector: FileReader = new FileReader()
 				lector.onload = (e) => {
-					this.imagenSeleccionada = e.target.result
+					this.imagenSeleccionada = e.target["result"]
 					//console.log(e)
 				}
 

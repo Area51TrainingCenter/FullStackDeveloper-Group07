@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { RecetasComponent } from './recetas/recetas.component';
 import { ListadoRecetaComponent } from './listado-receta/listado-receta.component';
 import { FormularioRecetaComponent } from './formulario-receta/formulario-receta.component';
+import { SubirArchivosDirective } from './compartido/subir-archivos.directive';
+import { ImagenComponent } from './imagen/imagen.component';
 
 @NgModule({
 	declarations: [
@@ -14,7 +16,8 @@ import { FormularioRecetaComponent } from './formulario-receta/formulario-receta
 		RecetasComponent,
 		ListadoRecetaComponent,
 		FormularioRecetaComponent,
-		AppDirectiva
+		SubirArchivosDirective,
+		ImagenComponent
 	],
 	imports: [
 		BrowserModule,

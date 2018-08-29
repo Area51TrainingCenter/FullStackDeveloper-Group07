@@ -1,6 +1,6 @@
 export interface IReceta {
 	titulo?: string
 	descripcion?: string
-	url?: string
+	imagenes?: File[]
 	mostrarDescripcion?: boolean
 }
