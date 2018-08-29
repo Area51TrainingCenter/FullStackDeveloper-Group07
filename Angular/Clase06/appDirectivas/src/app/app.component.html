@@ -1,0 +1,9 @@
+<h1 app-directiva [colorActivo]="'blue'">Texto de prueba</h1>
+
+<select [AppSelect]="listaDistritos"></select>
+
+<img [src]="imagenSeleccionada" alt="" *ngIf="imagenSeleccionada">
+
+<div appSubirArchivos (onHover)="aplicarClaseActivo=true" (onSaliendo)="aplicarClaseActivo=false" (onSeleccion)="seleccion($event)"
+ [ngClass]="{activo: aplicarClaseActivo}">Subir
+</div>

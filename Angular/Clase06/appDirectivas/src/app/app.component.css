@@ -1,0 +1,15 @@
+div {
+	width:500px;
+	height:300px;
+	border: 4px dashed rgba(255,0,0,.6);
+	text-align: center;
+	line-height: 300px;
+	font-family: Verdana;
+	font-size: 50px;
+	color: rgba(255,0,0,.8)
+}
+
+div.activo {
+	border-color: blue;
+	color: blue
+}
