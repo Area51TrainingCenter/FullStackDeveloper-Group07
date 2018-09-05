@@ -1,0 +1,10 @@
+<input type="text" #curso>
+<button (click)="insertar(curso.value)">Insertar</button>
+
+<ul>
+  <li *ngFor="let curso of arrCursos">
+    {{curso}}
+  </li>
+</ul>
+
+<app-listar></app-listar>
