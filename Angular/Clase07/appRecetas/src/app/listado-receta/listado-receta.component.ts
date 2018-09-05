@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { IReceta } from '../modelos/receta.model';
+import { RecetasService } from '../recetas.service';
 
 @Component({
   selector: 'app-listado-receta',
@@ -7,12 +8,15 @@ import { IReceta } from '../modelos/receta.model';
   styleUrls: ['./listado-receta.component.css']
 })
 export class ListadoRecetaComponent implements OnInit {
-  @Input() recetas: IReceta[]
-  @Output() onEliminandoReceta = new EventEmitter<IReceta>()
+  //@Input() recetas: IReceta[]
+  //@Output() onEliminandoReceta = new EventEmitter<IReceta>()
 
-  constructor() { }
+  recetas: IReceta[] = []
+
+  constructor(private recetasService: RecetasService) { }
 
   ngOnInit() {
+    this.recetas = this.recetasService.recetas
   }
 
   par(indice: number): boolean {
@@ -20,7 +24,8 @@ export class ListadoRecetaComponent implements OnInit {
   }
 
   eliminar(receta: IReceta) {
-    this.onEliminandoReceta.emit(receta)
+    //this.onEliminandoReceta.emit(receta)
+    this.recetasService.eliminar(receta)
   }
 
 }
