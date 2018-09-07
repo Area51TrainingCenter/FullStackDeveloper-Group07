@@ -12,12 +12,19 @@ import { LoginComponent } from './login/login.component';
 
 const rutas: Route[] = [
   { path: "", component: LoginComponent },
-  { path: "listado", component: ListadoComponent },
-  { path: "nuevo", component: NuevoComponent },
-  { path: "edicion/:id", component: EdicionComponent },
-  { path: "edicion/:id/todo", component: EdicionComponent },
+  {
+    path: "producto", component: ListadoComponent, children: [
+      //{ path: "", component: ListadoComponent },
+      { path: "nuevo", component: NuevoComponent },
+      { path: "edicion/:id", component: EdicionComponent }
+    ]
+  }
+
+
+
+  /*{ path: "edicion/:id/todo", component: EdicionComponent },
   { path: "edicion/:id/todo/todo", component: EdicionComponent },
-  { path: "formulario", component: FormularioComponent }
+  { path: "formulario", component: FormularioComponent }*/
 ]
 
 @NgModule({

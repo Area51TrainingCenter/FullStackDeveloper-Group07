@@ -1,8 +1,9 @@
 <nav>
   <a [routerLink]="['']" routerLinkActive="activo" [routerLinkActiveOptions]="{exact: true}">Home/Login</a>
-  <a [routerLink]="['listado']" routerLinkActive="activo">Listado</a>
-  <a [routerLink]="['nuevo']" routerLinkActive="activo">Nuevo</a>
-  <a [routerLink]="['edicion', 10]" [queryParams]="{rol: 'admin', acceso:'limitado',pagina: 5}" fragment="dios" routerLinkActive="activo">Edición</a>
+  <a [routerLink]="['producto']" routerLinkActive="activo" [routerLinkActiveOptions]="{exact: true}">Listado</a>
+  <a [routerLink]="['producto', 'nuevo']" routerLinkActive="activo">Nuevo</a>
+  <a [routerLink]="['producto','edicion', 10]" [queryParams]="{rol: 'admin', acceso:'limitado',pagina: 5}" fragment="dios"
+    routerLinkActive="activo">Edición</a>
 </nav>
 
 <router-outlet></router-outlet>

@@ -9,21 +9,34 @@ import { ListadoRecetaComponent } from './listado-receta/listado-receta.componen
 import { FormularioRecetaComponent } from './formulario-receta/formulario-receta.component';
 import { SubirArchivosDirective } from './compartido/subir-archivos.directive';
 import { ImagenComponent } from './imagen/imagen.component';
+import { Route, RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { EdicionComponent } from './edicion/edicion.component';
+
+const rutas: Route[] = [
+  { path: "", component: LoginComponent },
+  { path: "listado", component: ListadoRecetaComponent },
+  { path: "formulario", component: FormularioRecetaComponent },
+  { path: "edicion/:id", component: EdicionComponent }
+]
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		RecetasComponent,
-		ListadoRecetaComponent,
-		FormularioRecetaComponent,
-		SubirArchivosDirective,
-		ImagenComponent
-	],
-	imports: [
-		BrowserModule,
-		FormsModule
-	],
-	providers: [],
-	bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    RecetasComponent,
+    ListadoRecetaComponent,
+    FormularioRecetaComponent,
+    SubirArchivosDirective,
+    ImagenComponent,
+    LoginComponent,
+    EdicionComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(rutas)
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

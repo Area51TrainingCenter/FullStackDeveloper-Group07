@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { IReceta } from '../modelos/receta.model';
 import { RecetasService } from '../recetas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado-receta',
@@ -13,7 +14,7 @@ export class ListadoRecetaComponent implements OnInit {
 
   recetas: IReceta[] = []
 
-  constructor(private recetasService: RecetasService) { }
+  constructor(private recetasService: RecetasService, private ruteador: Router) { }
 
   ngOnInit() {
     this.recetas = this.recetasService.recetas
@@ -26,6 +27,10 @@ export class ListadoRecetaComponent implements OnInit {
   eliminar(receta: IReceta) {
     //this.onEliminandoReceta.emit(receta)
     this.recetasService.eliminar(receta)
+  }
+
+  editar(id: number) {
+    this.ruteador.navigate(["edicion", id])
   }
 
 }
