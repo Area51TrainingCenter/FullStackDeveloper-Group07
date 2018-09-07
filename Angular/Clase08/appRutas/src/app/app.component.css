@@ -1,0 +1,11 @@
+nav {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+a.activo:link,
+a.activo:visited {
+  color: magenta
+}

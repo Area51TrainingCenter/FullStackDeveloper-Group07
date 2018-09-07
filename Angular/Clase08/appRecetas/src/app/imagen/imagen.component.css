@@ -1,0 +1,11 @@
+div {
+	width: 200px;
+	height: 250px;
+	text-align: center;
+}
+
+div img {
+	max-width: 180px;
+	max-height: 180px;
+	height: auto;
+}
