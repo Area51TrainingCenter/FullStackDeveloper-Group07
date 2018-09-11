@@ -20,4 +20,15 @@ export class RecetasService {
       this.recetas.splice(indice, 1)
     }
   }
+
+  detallar(id: number) {
+	  return Object.assign({}, this.recetas[id])
+  }
+
+  actualizar(id:number, receta: IReceta) {
+	  console.log("id", id)
+	  this.recetas[id].titulo = receta.titulo
+	  this.recetas[id].descripcion = receta.descripcion
+	  console.log(this.recetas)
+  }
 }

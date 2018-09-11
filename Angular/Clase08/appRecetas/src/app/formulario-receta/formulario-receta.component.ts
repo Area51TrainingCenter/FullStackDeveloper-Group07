@@ -39,7 +39,7 @@ export class FormularioRecetaComponent implements OnInit {
       this.recetasService.grabar(receta)
       this.titulo.nativeElement.value = ""
       this.descripcion.nativeElement.value = ""
-      this.url.nativeElement.value = ""
+      //this.url.nativeElement.value = ""
     }
 
 
