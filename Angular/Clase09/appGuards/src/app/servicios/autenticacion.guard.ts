@@ -11,7 +11,6 @@ export class AutenticacionGuard implements CanActivate, CanActivateChild {
 		return this.autenticacionService.estaLogueado()
 	}
 
-
 	canActivateChild(): boolean {
 		return false
 	}
