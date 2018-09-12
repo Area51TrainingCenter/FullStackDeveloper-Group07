@@ -1,3 +1,11 @@
-<p>
-  nuevo works!
-</p>
+<form>
+	<div>
+		<input type="text" placeholder="Nombre de producto" [(ngModel)]="dataModificada.nombreProducto" name="nombre">
+	</div>
+	<div>
+		<input type="numeric" placeholder="Cantidad" [(ngModel)]="dataModificada.cantidad" name="cantidad">
+	</div>
+	<div>
+		<button type="button">Grabar</button>
+	</div>
+</form>
