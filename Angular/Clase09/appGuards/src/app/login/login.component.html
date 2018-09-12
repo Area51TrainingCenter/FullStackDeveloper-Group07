@@ -1,0 +1,10 @@
+<div>
+	<input type="text" placeholder="Usuario" #usuario>
+</div>
+<div>
+	<input type="password" placeholder="Contraseña" #contrasena>
+</div>
+<div>
+	<button (click)="ingresar(usuario.value, contrasena.value)">Ingresar</button>
+	<button (click)="logout()">Logout</button>
+</div>
