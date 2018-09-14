@@ -1,0 +1,23 @@
+div.imagenes {
+	width:100%;
+	height: 80px;
+	font-family: Verdana;
+	font-size:20px;
+	line-height: 80px;
+	border: 2px dashed grey;
+	color: grey;
+	text-align: center;
+}
+
+div.imagenes.activo {
+	border: 2px solid red;
+	color: red;
+}
+
+div.listaImagenes {
+	width: 100%;
+	height: 200px;
+	overflow: auto;
+	display: flex;
+	flex-wrap: wrap;
+}

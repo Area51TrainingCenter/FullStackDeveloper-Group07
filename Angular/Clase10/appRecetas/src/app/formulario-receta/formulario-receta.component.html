@@ -1,0 +1,25 @@
+<form>
+
+	<div class="form-group">
+		<input type="text" placeholder="Ingrese el título" class="form-control" name="titulo" #titulo>
+	</div>
+
+	<div class="form-group">
+		<textarea placeholder="Ingrese la descripción" cols="30" rows="10" class="form-control" name="descripcion" #descripcion></textarea>
+	</div>
+
+	<div class="form-group">
+		<div class="imagenes" appSubirArchivos (onHover)="aplicarClaseActivo=true" (onSaliendo)="aplicarClaseActivo=false" (onSeleccion)="seleccion($event)"
+		 [ngClass]="{activo: aplicarClaseActivo}">
+			Arrastre las imágenes
+		</div>
+		<div class="listaImagenes">
+			<app-imagen *ngFor="let archivo of listaFiles" [archivo]="archivo"></app-imagen>
+		</div>
+	</div>
+
+	<div class=" form-group">
+		<button type="button" class="btn btn-success" (click)="grabar()">Grabar</button>
+	</div>
+
+</form>
