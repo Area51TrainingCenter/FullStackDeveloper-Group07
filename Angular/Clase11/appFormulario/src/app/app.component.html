@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+
+    <form class="col-6" #f="ngForm">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Nombre" name="nombre" required ngModel>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Correo" name="correo" required email ngModel>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Contraseña" name="contrasena" required ngModel>
+      </div>
+      <div class="form-group">
+        <button type="button" (click)="ingresar()" class="btn btn-success">Ingresar</button>
+      </div>
+    </form>
+
+  </div>
+</div>

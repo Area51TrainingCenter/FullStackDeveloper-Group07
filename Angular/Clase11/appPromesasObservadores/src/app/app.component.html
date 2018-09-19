@@ -1,0 +1,18 @@
+<table>
+  <caption>Resultados</caption>
+  <tbody>
+    <tr *ngFor="let valor of valores">
+      <td>{{valor.usuario}}</td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="promesasEncadenadas()">Promesas Encadenadas</button>
+<button (click)="promesasSimultaneas()">Promesas Simultáneas</button>
+<button (click)="promesasCarrera()">Promesas Carreras</button>
+<button (click)="promesasCumpleInmediatamente()">Promesas Inmediatas</button>
+<button (click)="observableBasico()">Observable básico</button>
+<button (click)="observableAPIRest()">Observable API Rest</button>
+<button (click)="llamadaPaginacion()">Paginación</button>
+<button (click)="llamadaOrdenamiento()">Ordenamiento</button>
+
+<router-outlet></router-outlet>
