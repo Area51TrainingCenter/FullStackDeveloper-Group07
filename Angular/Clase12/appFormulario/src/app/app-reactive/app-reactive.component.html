@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+
+    <form class="col-6" [formGroup]="grupo" (ngSubmit)="ingresar()">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Nombre" name="nombre" formControlName="nombre">
+        <span *ngIf="!grupo.get('nombre').valid && grupo.get('nombre').touched">El nombre es requerido</span>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Correo" name="correo" formControlName="correo">
+        <span *ngIf="!grupo.get('correo').valid && grupo.get('correo').hasError('required') && grupo.get('correo').touched">El correo es requerido</span>
+        <span *ngIf="!grupo.get('correo').valid && grupo.get('correo').hasError('email') && grupo.get('correo').touched">El formato es de correo</span>
+        <span *ngIf="!grupo.get('correo').valid && grupo.get('correo').hasError('correoInvalido') && grupo.get('correo').touched">El dominio no es válido</span>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Contraseña" name="contrasena" formControlName="contrasena" (input)="forzarValidacion()">
+        <span *ngIf="!grupo.get('contrasena').valid && grupo.get('contrasena').touched">La contraseña es requerida</span>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Confirmar contraseña" name="confirmar" formControlName="confirmar">
+        <span *ngIf="!grupo.get('confirmar').valid && grupo.get('confirmar').touched && grupo.get('confirmar').hasError('required')">La confirmación es requerida</span>
+        <span *ngIf="!grupo.get('confirmar').valid && !grupo.get('confirmar').pristine && grupo.get('confirmar').hasError('confirmarInvalido')">La confirmación no coincide con la contraseña</span>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" name="terminos" formControlName="terminos" [(ngModel)]="valorAcepto" [value]="valorAcepto"> Acepto términos y condiciones
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success" [disabled]="!grupo.valid">Ingresar</button>
+      </div>
+    </form>
+    <button (click)="setearValores()">Setear Valores</button>
+    <button type="button" (click)="forzarValidacion()">Forzar Validación</button>
+  </div>
+</div>

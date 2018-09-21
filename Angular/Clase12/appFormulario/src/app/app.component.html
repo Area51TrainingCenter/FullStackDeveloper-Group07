@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+
+    <form class="col-6" #f="ngForm">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Nombre" name="nombre" required ngModel #nombre="ngModel">
+        <span *ngIf="nombre.hasError('required') && nombre.touched">El nombre es requerido</span>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Correo" name="correo" required email ngModel #correo="ngModel">
+        <span *ngIf="correo.hasError('required') && correo.touched">El correo es requerido</span>
+        <span *ngIf="correo.hasError('email') && correo.touched">El formato es de correo</span>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Contraseña" name="contrasena" required ngModel #contrasena="ngModel">
+        <span *ngIf="contrasena.hasError('required') && contrasena.touched">La contraseña es requerida</span>
+      </div>
+      <div class="form-group">
+        <button type="button" (click)="ingresar()" class="btn btn-success" [disabled]="!f.valid">Ingresar</button>
+      </div>
+    </form>
+    <button (click)="setearValores()">Setear Valores</button>
+
+  </div>
+</div>

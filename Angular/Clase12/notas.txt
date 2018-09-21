@@ -1,0 +1,2 @@
+- Revisar arreglo de checkboxs
+- Enviar parámetros al validador
