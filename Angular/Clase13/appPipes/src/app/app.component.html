@@ -1,0 +1,35 @@
+{{fecha | date:"MMM, yyyy" }}
+
+<br> {{nombre | uppercase}}
+
+<br> {{fecha | date:"MMM-yy" | uppercase}}
+
+<br>
+<br>{{cantidadRegistros | async}}
+<br>
+<br>
+<input type="text" [(ngModel)]="filtro">
+<br>
+<select [(ngModel)]="campo">
+  <option value="titulo">Título</option>
+  <option value="autor">Autor</option>
+  <option value="descripcion">Descripción</option>
+</select>
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Fecha</th>
+      <th>Autor</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let novela of novelas | filtroPipe: filtro: campo">
+      <td>{{novela.titulo}}</td>
+      <td>{{novela.fecha | date: "dd/MM/yyyy"}}</td>
+      <td>{{novela.autor | uppercase}}</td>
+      <td>{{novela.descripcion | reducidorPipe: 15: "ver más"}}</td>
+    </tr>
+  </tbody>
+</table>
