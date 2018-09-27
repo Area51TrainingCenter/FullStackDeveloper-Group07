@@ -28,7 +28,8 @@
 
         <label formArrayName="categorias" *ngFor="let control of grupo.controls.categorias.controls; let ind = index">
           <input type="checkbox" [formControlName]="ind"> {{categorias[ind].nombre}}
-        </label>
+		</label>
+		<span *ngIf="!grupo.get('categorias').valid && grupo.get('categorias').touched">Seleccione categorías</span>
 
 
 

@@ -1,0 +1,5 @@
+{
+  "watch": ["servidor.ts", "bin", "rutas", "api", "manejadores"],
+  "ext": "ts",
+  "exec": "ts-node servidor"
+}

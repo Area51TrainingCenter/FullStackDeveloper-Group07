@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators, ValidatorFn } from '@angular/forms';
 
 @Component({
   selector: 'app-app-reactive',
@@ -23,7 +23,7 @@ export class AppReactiveComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    const controles: Array<FormControl> = this.categorias.map(categoria => new FormControl(null)
+    const controles: Array<FormControl> = this.categorias.map(categoria => new FormControl(false)
     )
 
     /*this.grupo = this.formBuilder.group({
@@ -37,7 +37,7 @@ export class AppReactiveComponent implements OnInit {
       contrasena: new FormControl(null, Validators.required),
       confirmar: new FormControl(null, [Validators.required, this.confirmarContrasena]),
       terminos: new FormControl(null, Validators.required),
-      categorias: new FormArray(controles)
+      categorias: new FormArray(controles, this.minimaSeleccionChecks(1))
     })
   }
 
@@ -98,6 +98,21 @@ export class AppReactiveComponent implements OnInit {
     }
   }
 
+  minimaSeleccionChecks(minimo: number) {
+	const validador: ValidatorFn = (formArray: FormArray) => {
+	  const total = formArray.controls
+		.map(control => {
+			//console.log("value", control.value)
+			return control.value
+		})
+		.reduce((acumulado, valor) => valor ? acumulado + 1 : acumulado, 0);
+		console.log("total", total)
+	  return total >= minimo ? null : { required: true };
+	};
+  
+	return validador;
+  }
+
   setearValores() {
     /*this.grupo.setValue({
       nombre: "Sergio",
@@ -120,19 +135,23 @@ export class AppReactiveComponent implements OnInit {
     //console.log
     console.log(this.grupo)
 
-    const controlesCategorias: any = this.grupo.controls.categorias
+    //const controlesCategorias: any = this.grupo.controls.categorias
 
     /*const listaCategoriasSeleccionadas = controlesCategorias.map((el, ind) => {
       return el.value ? this.categorias[ind] : null
     }).filter(item => item ? true : false)*/
 
-    const listaCategoriasSeleccionadas = []
+    /*const listaCategoriasSeleccionadas = []
 
     controlesCategorias.controls.forEach((el, ind) => {
       if (el.value) {
         listaCategoriasSeleccionadas.push(this.categorias[ind])
       }
-    })
+	})*/
+	
+	let listaCategoriasSeleccionadas = this.grupo.value.categorias
+      .map((v, i) => v ? this.categorias[i] : null)
+      .filter(v => v !== null);
 
     console.log(listaCategoriasSeleccionadas)
 
