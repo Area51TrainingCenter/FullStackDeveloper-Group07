@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators, ValidatorFn } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-app-reactive',
@@ -99,18 +99,18 @@ export class AppReactiveComponent implements OnInit {
   }
 
   minimaSeleccionChecks(minimo: number) {
-	const validador: ValidatorFn = (formArray: FormArray) => {
-	  const total = formArray.controls
-		.map(control => {
-			//console.log("value", control.value)
-			return control.value
-		})
-		.reduce((acumulado, valor) => valor ? acumulado + 1 : acumulado, 0);
-		console.log("total", total)
-	  return total >= minimo ? null : { required: true };
-	};
-  
-	return validador;
+    const validador: ValidatorFn = (formArray: FormArray) => {
+      const total = formArray.controls
+        .map(control => {
+          //console.log("value", control.value)
+          return control.value
+        }) //[true, false, false, true]
+        .reduce((acumulado, valor) => valor ? acumulado + 1 : acumulado, 0);
+      console.log("total", total)
+      return total >= minimo ? null : { required: true };
+    };
+
+    return validador;
   }
 
   setearValores() {
@@ -148,8 +148,8 @@ export class AppReactiveComponent implements OnInit {
         listaCategoriasSeleccionadas.push(this.categorias[ind])
       }
 	})*/
-	
-	let listaCategoriasSeleccionadas = this.grupo.value.categorias
+
+    let listaCategoriasSeleccionadas = this.grupo.value.categorias
       .map((v, i) => v ? this.categorias[i] : null)
       .filter(v => v !== null);
 
