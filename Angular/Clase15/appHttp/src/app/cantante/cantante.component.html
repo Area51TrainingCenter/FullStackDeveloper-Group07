@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <table class="table table-hover table-striped col-6">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cantante of listadoCantantes">
+          <td>{{cantante.nombre}}</td>
+          <td>
+            <button class="btn btn-danger" (click)="eliminar(cantante._id)">Eliminar</button>
+            <button class="btn btn-warning" (click)="editar(cantante)">Editar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form class="col-6" (ngSubmit)="grabar()" [formGroup]="grupoCantante">
+      <div class="form-group">
+        <input type="text" placeholder="Nombre" class="form-control" formControlName="nombre" name="nombre">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success">Grabar</button>
+      </div>
+    </form>
+
+    <form class="col-6" (ngSubmit)="grabarEdicion()" [formGroup]="grupoCantanteEdicion">
+      <div class="form-group">
+        <input type="text" placeholder="Nombre" class="form-control" formControlName="nombre" name="nombre">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success">Grabar edición</button>
+      </div>
+    </form>
+
+    <form class="col-6" (ngSubmit)="grabarUsuario()" [formGroup]="grupoUsuario">
+      <div class="form-group">
+        <input type="text" placeholder="Nombre" class="form-control" formControlName="nombreCompleto" name="nombre">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Usuario" class="form-control" formControlName="usuario" name="usuario">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Contraseña" class="form-control" formControlName="contrasena" name="contrasena">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success">Grabar usuario</button>
+      </div>
+    </form>
+
+    <form class="col-6" (ngSubmit)="login()" [formGroup]="grupoLogin">
+      <div class="form-group">
+        <input type="text" placeholder="Usuario" class="form-control" formControlName="usuario" name="usuario">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Contraseña" class="form-control" formControlName="contrasena" name="contrasena">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success">Login</button>
+      </div>
+    </form>
+
+    <button class="btn btn-success" (click)="listarUsuarios()">Listar Usuarios</button>
+    <img src="/assets/perro.jpg" alt="">
+  </div>
+</div>

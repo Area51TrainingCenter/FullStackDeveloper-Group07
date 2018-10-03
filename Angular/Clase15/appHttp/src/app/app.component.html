@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <form class="col-6" (ngSubmit)="buscar()" [formGroup]="grupo">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Nombre del artista" formControlName="artista" name="artista">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Título de la canción" formControlName="titulo" name="titulo">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success" [disabled]="!grupo.valid">Buscar</button>
+      </div>
+    </form>
+
+    <div class="col-6 text-center p-20" style="overflow:auto;height:400px" [innerHTML]="resultado">
+    </div>
+
+  </div>
+  <div class="row">
+    <form class="col-6" (ngSubmit)="buscarPorDNI()" [formGroup]="persona">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Ingrese DNI" formControlName="dni" name="dni">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-warn">Buscar</button>
+      </div>
+    </form>
+    <div class="col-6">
+      {{nombre}}
+    </div>
+  </div>
+</div>

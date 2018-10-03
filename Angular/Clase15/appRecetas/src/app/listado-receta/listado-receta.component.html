@@ -1,0 +1,32 @@
+<button class="btn btn-success" [routerLink]="['/receta','nuevo']">Agregar Receta</button>
+<table class="table table-hover table-striped" *ngIf="recetas.length; else noHayRecetas">
+	<thead>
+		<tr>
+			<th>Receta</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let receta of recetas; let indice = index">
+			<td [ngClass]="{enAzul: par(indice), enRosado: !par(indice)}">
+				<table class="table table-hover">
+					<tr (click)="receta.mostrarDescripcion=!receta.mostrarDescripcion">
+						<td>{{receta.titulo}}</td>
+					</tr>
+					<tr [ngClass]="{mostrar: receta.mostrarDescripcion, ocultar: !receta.mostrarDescripcion}">
+						<td>{{receta.descripcion}}</td>
+					</tr>
+				</table>
+			</td>
+			<td>
+				<button class="btn btn-primary" (click)="editar(indice)">Editar</button>
+				<button class="btn btn-danger" (click)="eliminar(receta)">Eliminar</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<ng-template #noHayRecetas>
+	<div class="col-6">
+		No has ingresado recetas
+	</div>
+</ng-template>
