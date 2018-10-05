@@ -3,7 +3,9 @@ import { Route, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 
 const rutas: Route[] = [
-  { path: "", component: LoginComponent }
+  { path: "", component: LoginComponent },
+  { path: "cantantes", loadChildren: "../cantantes/cantantes.module#CantantesModule" },
+  { path: "canciones", loadChildren: "../canciones/canciones.module#CancionesModule" }
 ]
 
 @NgModule({

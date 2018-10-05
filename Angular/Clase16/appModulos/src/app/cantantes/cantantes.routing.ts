@@ -5,17 +5,13 @@ import { ListadoCantantesComponent } from "./listado-cantantes/listado-cantantes
 
 
 const rutas: Route[] = [
-  {
-    path: "cantantes", children: [
-      { path: "", component: ListadoCantantesComponent },
-      { path: "edicion", component: EdicionCantantesComponent }
-    ]
-  }
+  { path: "", component: ListadoCantantesComponent },
+  { path: "edicion", component: EdicionCantantesComponent }
 ]
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(rutas)
+    RouterModule.forChild(rutas)
   ]
 })
 export class CantantesRouting { }
