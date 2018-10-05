@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Route, RouterModule } from '@angular/router';
+import { PreloadAllModules, Route, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 
 const rutas: Route[] = [
@@ -9,7 +9,7 @@ const rutas: Route[] = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(rutas)],
+  imports: [RouterModule.forRoot(rutas, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class NucleoRoutingModule { }
