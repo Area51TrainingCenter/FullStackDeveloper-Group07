@@ -1,3 +1,22 @@
-<p>
-  login works!
-</p>
+<div fxLayout fxLayoutAlign="center">
+
+  <mat-card fxFlex="550px" fxFlex.lt-sm="320px">
+    <mat-card-title>
+      <h3>Login</h3>
+    </mat-card-title>
+    <form>
+      <mat-card-content fxLayout="column">
+        <mat-form-field>
+          <input type="text" matInput name="usuario" placeholder="Usuario">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="password" matInput name="contrasena" placeholder="Contraseña">
+        </mat-form-field>
+        <div fxLayout fxLayoutAlign="end">
+          <button mat-raised-button color="warn">Ingresar</button>
+        </div>
+      </mat-card-content>
+    </form>
+  </mat-card>
+
+</div>

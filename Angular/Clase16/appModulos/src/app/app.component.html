@@ -1,2 +1,14 @@
-<app-cabecera></app-cabecera>
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+
+  <mat-sidenav #menuLateral></mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button (click)="menuLateral.open()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

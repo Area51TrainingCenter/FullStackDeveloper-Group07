@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MaterialModule } from '../material/material.module';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { CargaGuard } from './carga.guard';
 import { LoginComponent } from './login/login.component';
@@ -9,7 +10,8 @@ import { NucleoRoutingModule } from './nucleo-routing.module';
 @NgModule({
   imports: [
     CommonModule,
-    NucleoRoutingModule
+    NucleoRoutingModule,
+    MaterialModule
   ],
   declarations: [
     LoginComponent,
