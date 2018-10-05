@@ -1,26 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AppRouting } from './app.routing';
-import { CabeceraComponent } from './cabecera/cabecera.component';
 import { CancionesModule } from './canciones/canciones.module';
 import { CantantesModule } from './cantantes/cantantes.module';
-import { LoginComponent } from './login/login.component';
+import { NucleoModule } from './nucleo/nucleo.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    CabeceraComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     CantantesModule,
     CancionesModule,
-    AppRouting,
-    RouterModule
+    NucleoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
