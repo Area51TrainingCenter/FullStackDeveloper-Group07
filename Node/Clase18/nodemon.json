@@ -1,0 +1,7 @@
+{
+	"watch": [
+		"02-metodos-rutas.ts"
+	],
+	"ext": "ts",
+	"exec": "ts-node 02-metodos-rutas"
+}
