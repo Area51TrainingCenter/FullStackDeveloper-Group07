@@ -1,7 +1,9 @@
-import { controlador } from "../api/controladores/usuariosControladores";
+import UsuariosControladores from "../api/controladores/usuariosControladores";
 const express = require("express")
 
 const ruteador = express.Router()
+
+const controlador = new UsuariosControladores()
 
 ruteador.get("/", controlador.listado)
 ruteador.post("/", controlador.insercion)
