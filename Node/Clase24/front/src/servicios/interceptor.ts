@@ -3,6 +3,7 @@ import { Injectable, Injector } from "@angular/core";
 //import { SeguridadService } from "./seguridad.service";
 import { Observable, throwError } from "rxjs";
 import { catchError, mergeMap, retry } from 'rxjs/operators';
+import { SeguridadService } from "./seguridad.service";
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {

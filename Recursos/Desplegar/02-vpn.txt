@@ -1,0 +1,42 @@
+1. Instalar PM2
+	npm i pm2 -g
+
+2. Para listar todas las aplicaciones que están en background
+	pm2 list
+
+3. Detalle de la aplicación
+	pm2 show <<nombre o id>>
+
+4. Reiniciar la aplicación
+	pm2 restart <<nombre o id>>
+
+5. Detener la aplicación
+	pm2 stop <<nombre o id>>
+
+6. Iniciar la aplicación
+	pm2 start <<nombre o id>>
+
+7. Log en tiempo real
+	pm2 logs
+
+8. Monitoreo en tiempo real
+	pm2 monit
+
+9. Para salir de las pantallas generadas por las dos opciones anteriores
+	ctrl + c
+
+10. Agregar/crear una aplicación en pm2
+	pm2 start app.js -n <<nombre app>> -x -- --prod
+
+11. Indicar que se levanten las aplicaciones cuando se reinicia el servidor
+pm2 save
+
+Para trabajar con typescript
+
+1. pm2 install typescript
+
+2. npm i -g typescript
+
+3. pm2 start app.ts -n <<nombre app>> -x -- --prod
+
+4. pm2 save

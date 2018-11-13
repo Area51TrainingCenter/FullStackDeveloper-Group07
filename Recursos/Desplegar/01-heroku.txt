@@ -1,0 +1,22 @@
+1. Crear una cuenta en Heroku
+
+2. Descargar e instalar el cliente de Heroku (Heroku Cli)
+
+3. Loguearse en Heroku
+	heroku login
+
+4. Crear un repositorio git
+	git init
+
+5. Vincular el repositorio remoto de la app en Heroku (actualmente vacía)	
+	heroku git:remote -a socketio-area51
+
+6. Preparar los archivos para subirlos
+	git add .
+	git commit -am "2017-12-30"
+
+7. Publicar en Heroku
+	git push heroku master
+
+8. Revisión de log de errores
+heroku logs
